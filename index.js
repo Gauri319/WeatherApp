@@ -42,13 +42,6 @@ function getweatherData(){
     } else {
         console.log( "The browser doesn't support Geolocation.");
     }
-    // navigator.geolocation.getCurrentPosition((sucess)=> {
-    // //    let latitude=sucess.coords.latitude;
-    // //    let longitude=sucess.coords.longitude;
-    // //    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`).then(res=>res.json()).then(data=>{
-    // //     getWeather(data.name);
-    // //    }) 
-    // })
 }
 function showcoordinates(myposition) {
         let latitude= myposition.coords.latitude;
