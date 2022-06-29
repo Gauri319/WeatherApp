@@ -1,5 +1,5 @@
 const app=document.querySelector("#main-container");
-//  const icon=document.querySelector(".icon");
+const icon=document.querySelector(".icon1");
 const search=document.querySelector(".search");
 const btn=document.querySelector(".submit");
 const form=document.querySelector("#SearchInput");
@@ -35,12 +35,15 @@ setInterval(()=>{
     DateEl.innerHTML=days[day]+','+date+' '+months[month];
 },1000);
 
+
 getweatherData();
 function getweatherData(){
+  
     if (navigator.geolocation) {
+        alert("Please! ON Your Device Location");
         navigator.geolocation.getCurrentPosition(showcoordinates);
     } else {
-        console.log( "The browser doesn't support Geolocation.");
+        alert( "The browser doesn't support Geolocation.");
     }
 }
 function showcoordinates(myposition) {
@@ -50,7 +53,6 @@ function showcoordinates(myposition) {
         getWeather(data.name);
        }) 
 }
-
 
 
 function showeatherdata(data){
@@ -98,7 +100,7 @@ function showeatherdata(data){
             place.innerHTML=`${data.timezone}`;
               
     
-                    let otherDayForecast='';
+           let otherDayForecast='';
             data.daily.forEach((day,idx )=> {
                 if(idx==0){
 
@@ -116,25 +118,7 @@ function showeatherdata(data){
             weather_forecast.innerHTML=otherDayForecast;
 
             // let timeofDay='day';
-            const code=data.current.weather[0].id;
-
-            if(code==800){
-                app.style.backgroundImage='url(./images/day/clear.webp)';
-                btn.style.background="#e5ba92"
-            }
-            else if(code>=801||code<=804){
-                    app.style.backgroundImage=`url(./images/day/cloud.jpg)`;
-                    btn.style.backgroundColor="#808080"
-
-                }
-            else if(code>=500||code<=531) {
-                app.style.backgroundImage='url(./images/day/ranny.jpg)';
-                btn.style.background="#fa6d1b"
-            } 
-            else{
-                app.style.backgroundImage='url(./images/day/snowfall.jpg)';
-                btn.style.background="#fa6d1b"
-            }  
+           
    }
 
 let cityinput="London";
@@ -166,10 +150,37 @@ const getWeather = async(city) => {
 
 function showWeather(data){
     console.log(data);
+    if(data.cod=='404'){
+       alert("City Not Found !please try Another");
+    }
     MainInfoEl.innerHTML=`
             <h1 class="name">${data.name},<span>${data.sys.country}</span></h1>
             <h1 id="temp"><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" width="50" height="50" class="img"><span> ${data.main.temp}&#176;C</span></h1>
-            <span class="condition">${data.weather[0].main}</span> `
+            <span class="condition">${data.weather[0].description}</span> `
 
-    country.innerHTML=`${data.sys.country}`;        
+    country.innerHTML=`${data.sys.country}`;   
+
+    const code=data.weather[0].id;
+
+    if(code==800){
+        app.style.backgroundImage='url(./images/day/clear.webp)';
+        btn.style.background="#e5ba92"
+        icon.innerHTML=`<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="" width="50px" height="50px">`;
+    }
+    else if(code>=801||code<=804){
+            app.style.backgroundImage=`url(./images/day/cloud.jpg)`;
+            btn.style.backgroundColor="#808080"
+            icon.innerHTML=`<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="" width="50px" height="50px">`;
+
+        }
+    else if(code>=500||code<=531) {
+        app.style.backgroundImage='url(./images/day/ranny.jpg)';
+        btn.style.background="#fa6d1b"
+        icon.innerHTML=`<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="" width="50px" height="50px">`;
+    } 
+    else{
+        app.style.backgroundImage='url(./images/day/snowfall.jpg)';
+        btn.style.background="#fa6d1b"
+        icon.innerHTML=`<img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="" width="50px" height="50px">`;
+    }  
 }
