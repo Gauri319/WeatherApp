@@ -513,9 +513,6 @@ h1,h3{
 
 }
 @media screen and (max-width:370px){
-    #search-input{
-        left: 70px;
-    }
     #line{
         left:10px;
     }
