@@ -513,17 +513,18 @@ h1,h3{
 
 }
 @media screen and (max-width:370px){
-    .info{
-        left:45px;
-    }
     #search-input{
         left: 70px;
     }
     #line{
-        left:8vw;
+        left:5vw;
+    }
+    
+    #place-container{
+         left:5vw;
     }
     #heading{
-        top:900px;
+        top:800px;
     }
     .weather-forecast-item{
         margin-left:4px;
