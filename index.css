@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Barlow+Semi+Condensed:wght@300&family=Libre+Franklin:wght@100&display=swap');
+
+body{
+    font-family: 'Barlow Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h3{
+    font-weight: 400;
+}
+#main-container{
+    background-image:url(images/day/clear.webp);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left:0;
+    width:96.5em;
+    height:55em;
+}
+.weatherapp{
+    width:100%;
+    height: 80vh;
+    color: #fff;
+    transition:400ms;
+    display:grid;
+    grid-template-columns:70% 28%;
+    opacity: 1;
+}
+
+.weatherapp::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+.container{ 
+    display: flex;
+    flex-direction:column;
+    z-index: 1;
+}
+.line{
+    position: absolute;
+    top: 10vh;
+    left:5vw;
+    width:1px;
+    min-height:69.8vh;
+    background-color:rgb(179, 175, 175);
+    z-index: 1;
+
+}
+#place-container{
+    width: 5em;
+    margin-top:10px;
+    margin-left:17px;
+    font-size:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.info{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    position:absolute;
+    top:25vh;
+    left:30vw;
+    width:400px;
+    border-radius:10px;
+    background-color:rgb(139, 133, 133,0.3);
+}
+.icon1{
+    background-image:url(./images/icons/sunny.png);
+    width: 50px;
+    height: 50px;
+}
+.date-time-info{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    display:flex;
+    align-items: flex-start;
+    flex-direction:column;
+    position:absolute;
+    top:80px;
+    left:150px;
+    font-size:35px;
+    margin:5px;
+}
+/* .time{
+    font-size:4vw;
+}
+#am-pm{
+    font-size:1.5vw;
+} */
+.name{
+    font-family: 'Libre Franklin', sans-serif;
+    margin:0;
+    font-size:40px;
+}
+#temp{
+    font-size:55px;
+    padding:0;
+    margin:0;
+}
+.condition{
+    font-family: 'Libre Franklin', sans-serif;
+    margin-left:4vw;
+    font-size:30px;
+}
+.main-info{
+    margin-left:5vw;
+}
+#extra-info ul{
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.panel{
+    background: rgba(110, 110, 110, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 1;
+}
+#search-input{
+    position: absolute;
+    top:80px;
+    left:450px;
+
+}
+.search{
+    background: none;
+    border: none;
+    border:1px #ccc solid;
+    padding:1em;
+    width:500px;
+    color: #fff;
+    font-size:0.9em;
+    z-index: 1;
+    border-radius: 10px 0 10px 0;
+}
+.search:focus{
+    outline: none;
+}
+.search::placeholder{
+    color: #ccc;
+}
+.submit{
+    padding:1em;
+    width:5vw;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: #8c847f;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: 0.4s;
+    z-index: 1;
+    border-radius: 10px 0 10px 0;
+}
+.submit:hover{
+    background: #fff;
+    color: #000;
+}
+.panel ul{
+    height: 100%;
+    margin: 0;
+    /* border-bottom: 1px #ccc solid; */
+} 
+.panel ul li{
+    font-size:24px;
+    color: #ccc;
+    margin:4.5vh 0 ;
+}
+.panel h4{
+    font-size: 30px;
+}
+
+#details li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} 
+
+#future-forecast{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+     background-color: rgba(152, 152, 156, 0.3); 
+     box-shadow:-10px -10px 32px 0 rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height:30vh;
+    justify-content:center;
+    display:grid;
+    grid-template-columns: 190px 200px  200px  200px  200px  200px  200px ;
+}
+
+#heading{
+    position: absolute;
+    top:500px;
+    left:90px;
+    font-size:50px;
+    color: #ccc;
+    z-index: 1;
+}
+.day{
+    padding:10px;
+    background-color: rgba(53, 48, 48, 0.3);
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.temp{
+    font-size:1.5vw;
+    color: #fff;
+}
+.weather-forecast-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    background-color:rgba(36, 35, 35, 0.4);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+ @media screen and (max-width:1300px) {
+    #main-container{
+        width: 79em;
+    }
+    .panel ul{
+      height:76.5vh;
+    }
+    #search-input{
+        left: 400px;
+    }  
+    .info{
+        top:30vh;
+    } 
+    .date-time-info{
+        left: 100px;
+    } 
+    #line{
+        height:100% ;
+    }
+    .search{
+        width:300px;
+    }
+    #heading{
+        top:450px;
+    }
+    #future-forecast{
+        margin-top: 20px;
+        display:grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: 150px 150px  150px 150px 150px  150px  150px ;
+    }
+}
+@media screen and (max-width:680px){
+    #main-container{
+        height:130em;
+        overflow: scroll;
+    }
+    .weatherapp{
+        width:73em;
+        display: flex;
+        flex-direction: column;
+    }
+    .container{
+        min-height: 80vh;
+    }
+    #search-input{
+        left:850px;
+    }
+    .search{
+        font-size:23px;
+    }
+    .submit{
+        font-size:23px;
+    }
+    .date-time-info{
+        left: 150px;
+    } 
+    .info{
+       left:400px ;
+    }
+    .line{
+        left:12vw;
+    }
+    .panel{
+        height:120px;
+      }
+   
+    .panel ul li{
+        border-bottom: 0.1px solid rgb(160, 156, 156);
+        margin:4vh 0 ;
+        font-size: 40px;
+        color: #e8e8e8;
+    }
+    #heading{
+        top:1200px;
+        left: 20px;
+    }
+
+    #future-forecast{
+        margin:1100px 0 0 0 ;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+    .weather-forecast-item{
+        font-size: 30px;
+        min-width:95%;
+        margin: 10px 10px 10px 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .weather-forecast-item .temp{
+        font-size:30px;
+    }
+    .panel h4{
+        font-size:40px;
+    }
+ 
+   
+}
+
+
+
