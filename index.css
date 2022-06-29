@@ -512,7 +512,7 @@ h1,h3{
     }
 
 }
-@media screen and (max-width:300px){
+@media screen and (max-width:370px){
     .info{
         left:45px;
     }
