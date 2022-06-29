@@ -16,16 +16,18 @@ h1,h3{
     position: relative;
     top: 0;
     left:0;
-    width:96.5em;
-    height:55em;
+    width:100vw;
+    height:100%;
+    overflow: auto;
 }
+
 .weatherapp{
     width:100%;
     height: 80vh;
     color: #fff;
     transition:400ms;
     display:grid;
-    grid-template-columns:70% 28%;
+    grid-template-columns:70% 30%;
     opacity: 1;
 }
 
@@ -49,7 +51,7 @@ h1,h3{
     top: 10vh;
     left:5vw;
     width:1px;
-    min-height:69.8vh;
+    height:70vh;
     background-color:rgb(179, 175, 175);
     z-index: 1;
 
@@ -91,12 +93,6 @@ h1,h3{
     font-size:35px;
     margin:5px;
 }
-/* .time{
-    font-size:4vw;
-}
-#am-pm{
-    font-size:1.5vw;
-} */
 .name{
     font-family: 'Libre Franklin', sans-serif;
     margin:0;
@@ -231,14 +227,11 @@ h1,h3{
 }
 
  @media screen and (max-width:1300px) {
-    #main-container{
-        width: 79em;
-    }
     .panel ul{
-      height:76.5vh;
+      height:100%;
     }
     #search-input{
-        left: 400px;
+        left: 35vw;
     }  
     .info{
         top:30vh;
@@ -253,99 +246,62 @@ h1,h3{
         width:300px;
     }
     #heading{
-        top:450px;
+        top: 70vh;
     }
     #future-forecast{
-        margin-top: 20px;
         display:grid;
         align-items: center;
         justify-content: center;
         grid-template-columns: 150px 150px  150px 150px 150px  150px  150px ;
     }
 }
-@media screen and (max-width:680px){
-    #main-container{
-        height:130em;
-        overflow: scroll;
-    }
-    .weatherapp{
-        width:70em;
-        display: flex;
-        flex-direction: column;
-    }
-    .container{
-        min-height: 80vh;
-    }
+@media screen and (max-width:980px){
     #search-input{
-        left:850px;
+        left:30vw;
     }
-    .search{
-        font-size:23px;
-    }
-    .submit{
-        font-size:23px;
-    }
-    .date-time-info{
-        left: 150px;
-    } 
     .info{
-       left:400px ;
+        left:25vw;
     }
-    .line{
-        left:12vw;
-    }
-    .panel{
-        height:120px;
-      }
-   
-    .panel ul li{
-        border-bottom: 0.1px solid rgb(160, 156, 156);
-        margin:4vh 0 ;
-        font-size: 40px;
-        color: #e8e8e8;
+    #future-forecast{
+        display:flex;
+        flex-direction: row;
     }
     #heading{
-        top:1200px;
-        left: 20px;
-    }
-
-    #future-forecast{
-        margin:1100px 0 0 0 ;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-    }
-    .weather-forecast-item{
-        font-size: 30px;
-        min-width:95%;
-        margin: 10px 10px 10px 10px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .weather-forecast-item .temp{
         font-size:30px;
     }
-    .panel h4{
-        font-size:40px;
-    }
- 
    
 }
-@media screen and (max-width:680px){
+@media screen and (max-width:890px){
+    #search-input{
+        left:27vw;
+    }
+    .info{
+        left:18vw;
+    }
+    #future-forecast{
+        display:flex;
+        flex-direction: row;
+    }
+    #heading{
+        font-size:30px;
+    }
+   
+}
+@media screen and (max-width:690px){
     #main-container{
         width:100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
     }
     .weatherapp{
-        width: 100vw;
+        height:100%;
         display: flex;
         flex-direction: column;
     }
     .date-time-info{
         font-size: 20px;
-        left:100px;
+        left:10vw;
     } 
     .info{
         top:150px;
@@ -358,7 +314,7 @@ h1,h3{
         left:55vw;
     }
     .search{
-        width:170px;
+        width:35vw;
         font-size: 10px;
     }
     .submit{
@@ -374,21 +330,14 @@ h1,h3{
     #extra-info ul li{
         font-size:10px;
     }
-    #place-container{
+    #place-container, .panel h4{
         font-size: 15px;
     }
-    .panel h4{
-        font-size:15px;
-    }
-    .panel{
-        height:400px;
-     }
      .container{
         min-height:60vh;
     }
-   
     .panel ul li{
-        width:85vw;
+        width:90vw;
         border-bottom: 0.1px solid rgb(160, 156, 156);
         margin:4vh 0 ;
         font-size:15px;
@@ -400,21 +349,19 @@ h1,h3{
         left: 25px;
     }
     #future-forecast{
-        margin:650px 0 0 0 ;
+         margin-top:50vh;
         display: flex;
-        width:90vw;
+        width:97%;
         flex-direction: column;
         align-items: flex-start;
 
     }
-    .weather-forecast-item ul li{
-        width: 200px;
-    }
     .weather-forecast-item{
-        width:10px;
+        width: 100%;
         font-size:17px;
-        margin-left: 30px;
+        margin-left:10px;
         display: flex;
+        margin: 5px;
         flex-direction: row;
         justify-content: space-between;
     }
@@ -423,7 +370,7 @@ h1,h3{
     }
   
 }
-@media screen and (max-width:450px){
+@media screen and (max-width:460px){
     #main-container{
         width:100%;
         height: 100%;
@@ -489,45 +436,46 @@ h1,h3{
         left: 25px;
     }
     #future-forecast{
-        margin:600px 0 0 0 ;
-        display: flex;
-        width:99vw;
-        flex-direction: column;
-        align-items: flex-start;
+        margin-top:50vh;
+       display: flex;
+       width:97%;
+       flex-direction: column;
+       align-items: flex-start;
 
-    }
-    .weather-forecast-item ul li{
-        width: 200px;
-    }
-    .weather-forecast-item{
-        width:10px;
-        font-size:17px;
-        margin-left: 30px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .weather-forecast-item .temp{
-        font-size:20px;
-    }
+   }
+   .weather-forecast-item{
+       width: 100%;
+       font-size:17px;
+       margin-left:10px;
+       display: flex;
+       margin: 5px;
+       flex-direction: row;
+       justify-content: space-between;
+   }
+   .weather-forecast-item .temp{
+       font-size:20px;
+   }
 
 }
 @media screen and (max-width:370px){
-    #line{
-        left:10px;
+    .info{
+        left:45px;
+    }
+    #search-input{
+        left:30vw;
+    }
+    .line{
+        left:5vw;
     }
     #place-container{
-         left:5vw;
+        margin-left:2px;
     }
     #heading{
-        top:800px;
+        font-size:30px;
+        top:800px
     }
     .weather-forecast-item{
-        margin-left:4px;
+        margin-left: 2px;
+    }
 
-    }
-     #search-input{
-        left:35vw;
-    }
-    
 }
