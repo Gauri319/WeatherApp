@@ -520,8 +520,13 @@ h1,h3{
         left: 70px;
     }
     #line{
-        left:10vw;
+        left:8vw;
     }
     #heading{
-        top:800px;
+        top:900px;
+    }
+    .weather-forecast-item{
+        margin-left:4px;
+    }
+    
 }
