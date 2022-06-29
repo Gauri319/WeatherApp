@@ -525,5 +525,9 @@ h1,h3{
     .weather-forecast-item{
         margin-left:4px;
     }
+     #search-input{
+        top:40px;
+        left:60vw;
+    }
     
 }
