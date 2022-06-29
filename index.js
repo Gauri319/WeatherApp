@@ -163,7 +163,7 @@ function showWeather(data){
     console.log(data);
     MainInfoEl.innerHTML=`
             <h1 class="name">${data.name},<span>${data.sys.country}</span></h1>
-            <h1 id="temp"><img src="images/icons/cloud.png" alt="icon" width="40" height="40" class="img"><span> ${data.main.temp}&#176;C</span></h1>
+            <h1 id="temp"><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" width="50" height="50" class="img"><span> ${data.main.temp}&#176;C</span></h1>
             <span class="condition">${data.weather[0].main}</span> `
 
     country.innerHTML=`${data.sys.country}`;        
