@@ -35,17 +35,29 @@ setInterval(()=>{
     DateEl.innerHTML=days[day]+','+date+' '+months[month];
 },1000);
 
-let latitude,longitude;
 getweatherData();
 function getweatherData(){
-    navigator.geolocation.getCurrentPosition((sucess)=> {
-       latitude=sucess.coords.latitude;
-       longitude=sucess.coords.longitude;
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showcoordinates);
+    } else {
+        console.log( "The browser doesn't support Geolocation.");
+    }
+    // navigator.geolocation.getCurrentPosition((sucess)=> {
+    // //    let latitude=sucess.coords.latitude;
+    // //    let longitude=sucess.coords.longitude;
+    // //    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`).then(res=>res.json()).then(data=>{
+    // //     getWeather(data.name);
+    // //    }) 
+    // })
+}
+function showcoordinates(myposition) {
+        let latitude= myposition.coords.latitude;
+       let longitude=myposition.coords.longitude;;
        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`).then(res=>res.json()).then(data=>{
         getWeather(data.name);
        }) 
-    })
 }
+
 
 
 function showeatherdata(data){
