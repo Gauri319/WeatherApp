@@ -54,12 +54,17 @@ getCurrentLocation= function(){
 }
 function showcoordinates(myposition) {
 
-        
+        // when the current position of the  user is sucessfull get by hte navigator.geolocation the sucess callback is called and it givesor return
+        //  a object of the current location . the coords is the inner object of that object and latitude and longitude is the
+        //  properties of theat coords object
+
 
         let latitude= myposition.coords.latitude;
         let longitude=myposition.coords.longitude;
 
-   
+        // to feach the weather of any location using one call api we required the latitude and longitude of that location  and api key
+        // this api is used only for get the city name of user using latitude or longitude
+
         // Current weather data
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`)
        .then(res=>res.json())
@@ -247,4 +252,3 @@ function showCityName(data){
 
     country.innerHTML=`${data.sys.country}`;   
 }
-
