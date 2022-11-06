@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Weather App</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+</head>
+
+<body>
+    <div id="main-container">
+        <video autoplay muted loop id="myVideo" style="min-height: 100vh;">
+            <source src="Blue Sky Video.mp4" type="video/mp4">
+        </video>
+        <div class="mycontainer">
+            <div class="container">
+                <div id="place-container">
+                    <div id="time-Zone" class="time-zone">Asia/Kolkata</div>
+                    <div id="country" class="country">IN</div>
+                    <div class="date-time-info">
+                        <div id="time" class="time">
+                            12:30 <span id="am-pm">PM</span>
+                        </div>
+                        <div id="date" class="date">
+                            Monday,24 May
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="line"></div> -->
+                <div class="info">
+                    <div class="main-info" style="text-align: center;">
+                        <h1 class="name">Solapur,<span>MH</span></h1>
+                        <h1 id="temp"><span class="icon1"><img src="http://openweathermap.org/img/wn/10d@2x.png" alt=""
+                                    width="50px" height="50px"></span><span id="temp"> 16&#176;C</span></h1>
+                        <span class="condition">Clear</span>
+                        <div id="extra-info">
+                            <ul>
+                                <li>Visibility:<span>10Km</span></li>
+                                <li>Dewpoint:<span>1000.00</span></li>
+                                <li>latitude:<span>19&#176;</span></li>
+                                <li>longitude:<span>8km/h;</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <!-- <h4>Weather Details</h4> -->
+                        <ul id="details">
+
+                            <li>
+                                <span>Humidity:</span>
+                                <span id="humidity">64%</span>
+                            </li>
+                            <li>
+                                <span>cloudy:</span>
+                                <span id="cloud">89%</span>
+                            </li>
+                            <li>
+                                <span>Pressure:</span>
+                                <span id="pressure">89%</span>
+                            </li>
+                            <li>
+                                <span>Feels_like:</span>
+                                <span id="feel-like">89%</span>
+                            </li>
+                            <li>
+                                <span>Wind speed:</span>
+                                <span id="wind">8km/h</span>
+                            </li>
+                            <li>
+                                <span>Sunrise:</span>
+                                <span id="wind">06:00</span>
+                            </li>
+                            <li>
+                                <span>Sunset:</span>
+                                <span id="wind">18:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="search-input">
+                    <form action="" id="SearchInput">
+                        <input type="search" class="search" placeholder="Enter City Name">
+                        <button type="submit " class="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+            </div>
+            <fieldset id="future-forecast">
+                <legend>Daily weather</legend>
+                <div class="weather-forecast-item">
+                    <div class="day">Monday</div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                    <div class="temp">Night-25&#176; C</div>
+                    <div class="temp">Day-36&#176; C</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <div class="day">Tuesday</div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                    <div class="temp">Night-25&#176; C</div>
+                    <div class="temp">Day-36&#176; C</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <div class="day">Wedensday</div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                    <div class="temp">Night-25&#176; C</div>
+                    <div class="temp">Day-36&#176; C</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <div class="day">Thursday</div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                    <div class="temp">Night-25&#176; C</div>
+                    <div class="temp">Day-36&#176; C</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <div class="day">Friday</div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                    <div class="temp">Night-25&#176; C</div>
+                    <div class="temp">Day-36&#176; C</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <div class="day">Saturday</div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                    <div class="temp">Night-25&#176; C</div>
+                    <div class="temp">Day-36&#176; C</div>
+                </div>
+                <div class="weather-forecast-item">
+                    <div class="day">Sonday</div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather-icon" class="w-icon">
+                    <div class="temp">Night-25&#176; C</div>
+                    <div class="temp">Day-36&#176; C</div>
+                </div>
+
+            </fieldset>
+            <fieldset id="hourly">
+                <legend style="font-size:30px;">Hourly Weather</legend>
+                <div id="chart_div" style="width: 100vw;"></div>
+            </fieldset>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"
+        integrity="sha512-Dz4zO7p6MrF+VcOD6PUbA08hK1rv0hDv/wGuxSUjImaUYxRyK2gLC6eQWVqyDN9IM1X/kUA8zkykJS/gEVOd3w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src='index.js'></script>
+</body>
+
+</html>
